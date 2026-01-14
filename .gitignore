@@ -1,0 +1,23 @@
+# Secrets
+.env
+.env.local
+.env.production
+
+# API keys
+*.key
+*.pem
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Node / Python
+node_modules/
+__pycache__/
