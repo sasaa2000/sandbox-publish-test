@@ -1,0 +1,10 @@
+from fastapi import FastAPI
+from app.schemas import ProductInput, AnalysisResult
+from app.logic_engine import analyze_product
+
+app = FastAPI(title="AI Product Analyzer")
+
+@app.post("/analyze", response_model=AnalysisResult)
+def analyze_product_api(product: ProductInput):
+    result = analyze_product(product.description)
+    return result
