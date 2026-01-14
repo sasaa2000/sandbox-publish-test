@@ -1,0 +1,29 @@
+def analyze_product(product_description: str):
+    score = 0
+
+    # منطق بسيط قابل للتطوير
+    keywords = ["problem", "solution", "improve", "save", "easy", "fast"]
+
+    demand_score = sum(1 for k in keywords if k in product_description.lower())
+    competition_score = 2
+    marketing_score = 3
+    uniqueness_score = 2
+
+    score = demand_score + competition_score + marketing_score + uniqueness_score
+    final_score = min(score, 10)
+
+    if final_score >= 8:
+        decision = "Launch"
+        market_status = "Strong"
+    elif final_score >= 5:
+        decision = "Test"
+        market_status = "Medium"
+    else:
+        decision = "Reject"
+        market_status = "Weak"
+
+    return {
+        "profitability_score": final_score,
+        "market_status": market_status,
+        "final_recommendation": decision
+    }
