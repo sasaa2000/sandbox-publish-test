@@ -1,0 +1,9 @@
+from pydantic import BaseModel
+
+class ProductInput(BaseModel):
+    description: str
+
+class AnalysisResult(BaseModel):
+    profitability_score: float
+    market_status: str
+    final_recommendation: str
